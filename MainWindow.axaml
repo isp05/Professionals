@@ -1,0 +1,150 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="775" d:DesignHeight="200"
+        Width="1920" Height="1080"
+        WindowStartupLocation="CenterScreen"
+        x:Class="AvaloniaDemo_3.App.MainWindow"
+        Title="AvaloniaDemo_3.App">
+    <Window.Styles>
+        <StyleInclude Source="/MainWindowStyles.axaml"/>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto, *, Auto"
+        Classes="Wrapper">
+        <TabControl>
+            <TabItem Header = "Регистрация пациентов">
+             <Grid Grid.Row="1"
+            ColumnDefinitions="*, 2*"> 
+
+            <StackPanel Grid.Column="0">
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Имя"
+                        Classes="Input"/>
+                    <TextBox x:Name="InputFirstName"
+                        Classes="Input"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Фамилия"
+                        Classes="Input"/>
+                    <TextBox x:Name="InputLastName"
+                            Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Отчество"
+                        Classes="Input"/>
+                    <TextBox x:Name="InputPatronymic"
+                            Classes="Input"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Номер и серия паспорта"
+                           Classes="Input"/>
+                    <MaskedTextBox Mask="0000 000000" x:Name="InputPassport" Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Дата рождения"
+                           Classes="Input"/>
+                    <DatePicker x:Name="InputBirthday"
+                        Classes="Input"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Пол"
+                           Classes="Input"/>
+                    <ComboBox SelectedIndex="0" MaxDropDownHeight="100" Classes="Input">
+                        <ComboBoxItem Classes="Input">Мужчина</ComboBoxItem>
+                        <ComboBoxItem Classes="Input">Женщина</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Место работы"
+                           Classes="Input"/>
+                    <TextBox x:Name="InputWork"
+                             Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Адрес"
+                           Classes="Input"/>
+                    <TextBox x:Name="InputAddress"
+                             Classes="Input"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Электронная почта"
+                           Classes="Input"/>
+                    <TextBox x:Name="InputEmail"
+                             Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Номер телефона" Classes="Input"/>
+                    <MaskedTextBox Mask="+7 (000) 000 0000" x:Name="InputPhoneNumber" Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Предыдущий визит пациента"
+                           Classes="Input"/>
+                    <DatePicker x:Name="LastVisit"
+                        Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Следующий визит пациента"
+                           Classes="Input"/>
+                    <DatePicker x:Name="NextVisit"
+                             Classes="Input"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Дата выдачи медицинской карты"
+                           Classes="Input"/>
+                    <DatePicker x:Name="InputDateMedicalCard"
+                        Classes="Input"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Диагноз"
+                           Classes="Input"/>
+                    <TextBox x:Name="InputDiagnossis"
+                             Classes="Input"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Номер страхового полиса"
+                           Classes="Input"/>
+                    <TextBox x:Name="InputIndurancePolicyNumber"
+                             Classes="Input"/>
+                </StackPanel>
+                
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Дата окончания действия страхового полиса"
+                           Classes="Input"/>
+                    <DatePicker x:Name="InputIndurancePolicyIssueDate"
+                        Classes="Input"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            Classes="Buttons">
+                    <Button x:Name="ButtonClear"
+                            Content="_Clear"
+                            Click="Clear_OnClick"
+                            Classes="Clear"/>
+                    <Button x:Name="ButtonSave"
+                            Content="_Save"
+                            Click="ConnectToDatabase"
+                            Classes="Save"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+            </TabItem>
+            <TabItem Header = "Госпитализация">
+            </TabItem>
+            <TabItem Header = "Направление пациентов на лечебно-диагностические мероприятия">
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
